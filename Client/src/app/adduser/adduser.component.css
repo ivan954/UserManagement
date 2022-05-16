@@ -1,0 +1,14 @@
+.mainCard {
+    border-style: solid;
+    border-radius: 50px;
+    border-width: 7px;
+    width: 50%;
+    margin: auto;
+    background-color: rgb(218, 224, 255);
+  }
+  .btnD {
+    background-color: rgb(235, 143, 143);
+  }
+  .btnU {
+    background-color: rgb(101, 241, 195);
+  }

@@ -1,0 +1,13 @@
+.search {
+  width: 50%;
+  text-align: center;
+  padding: 10px;
+  font-size: larger;
+}
+.createUser{
+    color: black;
+    background-color: aqua;
+    padding: 8px;
+    width: 200px;
+    font-size: larger;
+}

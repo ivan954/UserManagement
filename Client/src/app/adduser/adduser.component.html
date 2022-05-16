@@ -1,0 +1,13 @@
+<div class="mainCard">
+    <div><br />
+        Name : <input [(ngModel)]="userData.Name" #name type="text"><br /><br />
+        Email : <input [(ngModel)]="userData.Email" #email type="email"><br /><br />
+        Street : <input [(ngModel)]="userData.Street" #street type="text"><br /><br />
+        City : <input [(ngModel)]="userData.City" #city type="text"><br /><br />
+        Zip Code : <input [(ngModel)]="userData.ZipCode" #ZipCode type="number"><br /><br />
+    </div>
+
+    <button mat-stroked-button class="btnU" (click)="Create(name.value,email.value,street.value,city.value,ZipCode.value)">
+        Create</button>&nbsp;&nbsp;&nbsp;
+    <button mat-stroked-button class="btnD" (click)="BackToMainPage()">Back</button><br /><br />
+</div>

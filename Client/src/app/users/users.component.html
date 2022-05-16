@@ -1,0 +1,17 @@
+<div>
+    <div>
+        <input class="search" type="text" [(ngModel)]="term" placeholder="Search">
+        &nbsp;&nbsp;&nbsp;
+    </div>
+    <br />
+    <button mat-stroked-button class="createUser" (click)="nav()">Create New User</button>
+</div>
+<div>
+    <div fxLayout="row wrap" fxLayoutGap="16px grid">
+        <app-user fxFlex="50%" fxFlex.sm="100%" fxFlex.xs="100%"
+            *ngFor="let p of users | filter:term | paginate: { itemsPerPage: 4, currentPage: page, totalItems:totalLength }"
+            [user]="p">
+        </app-user>
+    </div>
+    <pagination-controls (pageChange)="page = $event"></pagination-controls>
+</div>

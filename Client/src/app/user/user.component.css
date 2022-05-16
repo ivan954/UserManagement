@@ -1,0 +1,68 @@
+.mainCard {
+  border-style: solid;
+  border-radius: 50px;
+  border-width: 7px;
+  width: 80%;
+  margin: auto;
+  background-color: rgb(218, 224, 255);
+}
+.btnD {
+  background-color: rgb(235, 143, 143);
+}
+.btnU {
+  background-color: rgb(101, 241, 195);
+}
+.inerdiv {
+  margin: auto;
+  width: 50%;
+}
+.otherData {
+  margin: auto;
+  width: 40%;
+}
+.btnotherData {
+  background-color: rgb(173, 173, 173);
+}
+/*--------------------- Tasks Posts --------------------------*/
+.blue {
+  background-image: url("https://images.unsplash.com/photo-1557683316-973673baf926?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y29sb3IlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fA%3D%3D&w=1000&q=80");
+  background-size: cover;
+  border-radius: 40px;
+}
+.addNewTaskPost{
+  background-color: rgb(145, 240, 208);
+  color: black;
+}
+.TasksPosts {
+  border-color: rgb(0, 0, 0);
+  border-style: solid;
+  border-radius: 20px;
+  margin: auto;
+  width: 70%;
+  padding: 5%;
+  color: white;
+}
+.btnTasksPosts {
+  background-color: rgb(0, 238, 255);
+  color: black;
+}
+.TaskPost {
+  background-color: rgb(226, 226, 226);
+  border-style: solid;
+  border-color: rgb(0, 0, 0);
+  color: black;
+  padding: 5%;
+}
+.newTaskPost {
+  color: white;
+  border-style: solid;
+  border-radius: 20px;
+  width: 50%;
+  height: auto;
+  margin-left: 25%;
+}
+.newTaskPost p {
+  padding: 5%;
+  font-size: larger;
+  margin: auto;
+}

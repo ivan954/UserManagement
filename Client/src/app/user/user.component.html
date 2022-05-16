@@ -1,0 +1,84 @@
+<br />
+<mat-card class="mainCard" [style.border-color]="isComplited(user.Tasks)? 'white' : 'red'">
+    <mat-card-title>ID: {{user._id}} </mat-card-title><br /><br />
+
+    <mat-card class="inerdiv">
+        Name : <input matInput type="text" [(ngModel)]="user.Name" value="{{user.Name}}"><br /><br />
+        Email : <input type="text>" [(ngModel)]="user.Email" value="{{user.Email}}"><br /><br />
+
+
+        <button mat-stroked-button (click)="Update(user._id)" class="btnU">Update</button>&nbsp;&nbsp;
+
+        <button mat-stroked-button (click)="Delete(user._id)" class="btnD">Delete</button><br /><br />
+
+        <button mat-stroked-button (mouseover)="isMouseOver= true" (click)="isMouseOver=!isMouseOver"
+            class="btnotherData">Other
+            Data</button>
+
+    </mat-card><br />
+    <mat-card-subtitle [ngClass]="{'white' : toggle, 'blue': !toggle}">
+        <mat-card class="otherData" *ngIf="isMouseOver">
+            Streetv : &nbsp; <input type="text" [(ngModel)]="user.Street" value="{{user.Street}}"><br />
+            City : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" [(ngModel)]="user.City"
+                value="{{user.City}}"><br />
+            Zip Code :&nbsp; <input type="text" [(ngModel)]="user.ZipCode" value="{{user.ZipCode}}"><br />
+        </mat-card><br />
+
+        <button mat-stroked-button class="btnTasksPosts" (click)="todos() ">Tasks & Posts</button><br /><br />
+
+
+        <div *ngIf="idClicked">
+            <button mat-stroked-button class="addNewTaskPost" (click)="addTask()">Add New Task</button><br /><br />
+
+            <div *ngIf="newTask == false" class="newTaskPost">
+                <p>Create New Task</p>
+                Title: <input #title type="text"><br /><br />
+
+                <button mat-stroked-button class="btnU"
+                    (click)="UpdateTasks(user._id, title.value)">Submit</button>&nbsp;&nbsp;
+                <button mat-stroked-button class="btnD" (click)="addTask()">Cancel</button><br /><br />
+
+            </div>
+            <div *ngIf="newTask" class="TasksPosts">
+                <h1>Tasks</h1>
+                <h3 class="TaskPost" type="text" *ngFor="let p of user.Tasks">
+                    Title : {{p.Title}}
+                    <br> Completed : {{p.Completed}}
+                    <br /><br />
+                    <button mat-stroked-button class="btnU" (click)="CompleteBtn(p.Title, user._id)"
+                        *ngIf="!p.Completed">
+                        Mark Completed</button>
+                    <button mat-stroked-button class="btnD" (click)="DeleteTaskBtn(p.Title, user._id)"
+                        *ngIf="p.Completed">
+                        Delete</button>
+                </h3>
+                <p *ngIf="!user.Tasks?.length">there is no Tasks on this user</p>
+            </div><br />
+
+            <button mat-stroked-button class="addNewTaskPost" (click)="addPost()">Add New Post</button><br /><br />
+            <div *ngIf="newPost == false" class="newTaskPost">
+                <p>Create New Post</p>
+
+                Title: <input #title type="text"><br /><br />
+                Body: <input style="height: 50px;" #body type="text"><br /><br />
+
+                <button mat-stroked-button class="btnU"
+                    (click)="UpdatePost(user._id, title.value, body.value)">Submit</button>&nbsp;&nbsp;
+                <button mat-stroked-button class="btnD" (click)="addPost()">Cancel</button><br /><br />
+            </div>
+
+            <div *ngIf="newPost" class="TasksPosts">
+                <h1>Posts </h1>
+                <h3 class="TaskPost" type="text" *ngFor="let p of user.Posts">
+                    Title :{{p.Title}} <br />
+                    Body :{{p.Body}} <br /><br />
+                    <button mat-stroked-button class="btnD" (click)="DeletePostBtn(p.Title, user._id)" *ngIf="newPost">
+                        Delete</button>
+                </h3>
+                <p *ngIf="!user.Posts?.length">there is no Post on this user</p>
+            </div><br/>
+
+        </div>
+
+    </mat-card-subtitle>
+</mat-card>
