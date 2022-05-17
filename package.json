@@ -5,9 +5,9 @@
 	"type": "module",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"start": "cd Server && npm run server",
+		"start": "node Server/server.js",
+		"backend": "nodemon Server/server.js",
 		"frontend": "cd Client && ng serve",
-		"backend": "cd Server && npm run nodemon",
 		"dev": "concurrently \"npm run frontend \" \"npm run backend\""
 	},
 	"repository": {
@@ -24,13 +24,16 @@
 	"description": "",
 	"dependencies": {
 		"colors": "^1.4.0",
-		"concurrently": "^7.2.0",
 		"cors": "^2.8.5",
 		"dotenv": "^16.0.1",
 		"express": "^4.18.1",
 		"express-async-handler": "^1.2.0",
 		"init": "^0.1.2",
 		"mongoose": "^6.3.3",
+		"path": "^0.12.7"
+	},
+	"devDependencies": {
+		"concurrently": "^7.2.0",
 		"nodemon": "^2.0.16"
 	}
 }
