@@ -1,4 +1,7 @@
 
+# production
+/Client/dist
+
 # dependencies
 node_modules
 .env
