@@ -24,7 +24,7 @@ if (process.env.NODE_ENV === 'production') {
 
 	app.get('*', (req, res) =>
 		res.sendFile(
-			path.resolve(__dirname, 'Client/dist/myapp', 'build', 'index.html')
+			path.resolve(__dirname, 'Client/dist', 'myapp', 'index.html')
 		)
 	)
 } else {
