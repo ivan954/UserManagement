@@ -18,7 +18,7 @@ app.use('/api/users', usersRoutes)
 
 const PORT = process.PORT || 5000
 
-app.listen(
+app.listen( 
 	PORT,
 	console.log(
 		`Server runing in ${process.env.NODE_ENV} mode on port ${PORT}`.yellow.bold
