@@ -5,7 +5,10 @@
 	"type": "module",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"start": "concurrently \"cd Server && npm run server \" \"cd Client && ng serve\""
+		"start": "cd Server && npm run server",
+		"frontend": "cd Client && ng serve",
+		"backend": "cd Server && npm run nodemon",
+		"dev": "concurrently \"npm run frontend \" \"npm run backend\""
 	},
 	"repository": {
 		"type": "git",
