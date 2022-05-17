@@ -20,10 +20,12 @@ app.use('/api/users', usersRoutes)
 const __dirname = path.resolve()
 
 if (process.env.NODE_ENV === 'production') {
-	app.use(express.static(path.join(__dirname, '/Client/dist')))
+	app.use(express.static(path.join(__dirname, '/Client/dist/myapp')))
 
 	app.get('*', (req, res) =>
-		res.sendFile(path.resolve(__dirname, 'Client', 'build', 'index.html'))
+		res.sendFile(
+			path.resolve(__dirname, 'Client/dist/myapp', 'build', 'index.html')
+		)
 	)
 } else {
 	app.get('/', (req, res) => {
